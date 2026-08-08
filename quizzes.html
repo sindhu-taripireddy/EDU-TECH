@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzes Hub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("https://static.vecteezy.com/system/resources/thumbnails/018/990/233/small/3d-blue-mockup-web-site-poster-for-online-support-center-services-with-white-questions-signs-with-answers-quiz-faq-design-illustration-vector.jpg") no-repeat center center/cover;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    header {
+      background: rgba(0, 119, 182, 0.8);
+      color: white;
+      text-align: center;
+      padding: 30px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      backdrop-filter: blur(6px);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #2c3e50;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #dee3e6;
+    }
+
+
+    .intro {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.6;
+
+   
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 15px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .quiz-grid {
+      max-width: 1000px;
+      margin: 0 auto 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      padding: 0 20px;
+    }
+
+    .quiz-card {
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+
+     
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    .quiz-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .quiz-card h2 {
+      margin: 0 0 15px;
+      color: #0077b6;
+    }
+
+    .quiz-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: #0077b6;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .quiz-btn:hover {
+      background: #023e8a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Technology Quizzes</h1>
+    <p>Test your knowledge of fundamental technologies</p>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="videos.html">Videos</a>
+        <a href="quizzes.html">Quizzes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="intro">
+    <p>
+      Welcome to the quizzes hub! 🚀 Here you can explore and test your understanding of 
+      the most important technologies in web development and programming. 
+      Each quiz will help you strengthen your basics and boost your confidence.  
+    </p>
+    <p>
+      Choose a quiz below to get started:
+    </p>
+  </div>
+
+  <div class="quiz-grid">
+    <div class="quiz-card">
+      <h2>HTML</h2>
+      <a href="html-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+    <div class="quiz-card">
+      <h2>CSS</h2>
+      <a href="css-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+    <div class="quiz-card">
+      <h2>JavaScript</h2>
+      <a href="js-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+    <div class="quiz-card">
+      <h2>Python</h2>
+      <a href="python-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+    <div class="quiz-card">
+      <h2>React.js</h2>
+      <a href="react-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+    <div class="quiz-card">
+      <h2>C</h2>
+      <a href="c-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn HTML - EduTech</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                    url('https://media.istockphoto.com/id/1919863292/photo/e-learning-education-internet-lessons-and-online-learning-with-webinars-video-tutorials.jpg?s=612x612&w=0&k=20&c=zWAqp6FGH-zm6b0Os_CssxubtrgKh1MyFeMgelFZbOg=')
+                    no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+        color: #333;
+    }
+
+    nav {
+        background: rgba(255,255,255,0.95);
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav h1 {
+        color: #1a3d5d;
+        margin: 0;
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #1a3d5d;
+        font-weight: 500;
+    }
+    nav ul li a:hover {
+        color: #0077b6;
+    }
+
+    .content {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 25px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    .content h2 {
+        color: #0077b6;
+        margin-bottom: 15px;
+    }
+    .content h3 {
+        color: #1a3d5d;
+        margin-top: 25px;
+    }
+    .content p {
+        line-height: 1.6;
+        font-size: 16px;
+        color: #444;
+    }
+    .content pre {
+        background: #f4f4f4;
+        padding: 12px;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 14px;
+        border-left: 4px solid #0077b6;
+    }
+    .content ul {
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+    .content li {
+        margin-bottom: 10px;
+    }
+    .back-btn, .quiz-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 16px;
+        background: #0077b6;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .back-btn:hover, .quiz-btn:hover {
+        background: #005f87;
+    }
+
+    footer {
+        background: rgba(26,61,93,0.95);
+        text-align: center;
+        padding: 15px;
+        margin-top: 50px;
+        color: white;
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+
+    <nav>
+        <h1>EduTech</h1>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h2>Learn HTML</h2>
+        <p>HTML (HyperText Markup Language) is the standard language used to create and structure content on the web. It provides the foundation for all websites, defining the elements that browsers render.</p>
+        
+        <h3>1. HTML Structure & Elements</h3>
+        <p>Every HTML page has a basic structure. It usually starts with <code>&lt;!DOCTYPE html&gt;</code>, followed by <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> sections.</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;This is my first web page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h3>2. Forms & Input Tags</h3>
+        <p>Forms collect user input. Common input types include text, email, password, and buttons.</p>
+        <pre>
+&lt;form&gt;
+  Name: &lt;input type="text" name="name"&gt;&lt;br&gt;
+  Email: &lt;input type="email" name="email"&gt;&lt;br&gt;
+  Password: &lt;input type="password" name="pass"&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+        </pre>
+
+        <h3>3. Links & Navigation</h3>
+        <p>Links are created using the <code>&lt;a&gt;</code> tag. They can point to internal or external pages.</p>
+        <pre>
+&lt;a href="https://www.google.com" target="_blank"&gt;Visit Google&lt;/a&gt;
+
+&lt;nav&gt;
+  &lt;a href="home.html"&gt;Home&lt;/a&gt; |
+  &lt;a href="about.html"&gt;About&lt;/a&gt; |
+  &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+        </pre>
+
+        <h3>4. Tables & Lists</h3>
+        <p>Tables organize data into rows and columns. Lists display items in order or as bullet points.</p>
+        <pre>
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;22&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apples&lt;/li&gt;
+  &lt;li&gt;Bananas&lt;/li&gt;
+  &lt;li&gt;Cherries&lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+
+        <h3>5. Semantic HTML</h3>
+        <p>Semantic elements describe their meaning to the browser and developers. Examples: <code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>.</p>
+        <pre>
+&lt;header&gt;
+  &lt;h1&gt;My Blog&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;article&gt;
+  &lt;h2&gt;First Post&lt;/h2&gt;
+  &lt;p&gt;This is an article about HTML.&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;© 2025 My Website&lt;/p&gt;
+&lt;/footer&gt;
+        </pre>
+
+        <h3>6. Multimedia in HTML</h3>
+        <p>HTML supports embedding images, audio, and video.</p>
+        <pre>
+&lt;img src="image.jpg" alt="A description" width="300"&gt;
+&lt;audio controls&gt;
+  &lt;source src="sound.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+        </pre>
+
+        <h3>7. Inline vs Block Elements</h3>
+        <p>Block elements start on a new line (e.g., <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>), while inline elements don’t break the flow (e.g., <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>).</p>
+        <pre>
+&lt;div style="background:lightblue"&gt;Block Element&lt;/div&gt;
+&lt;span style="color:red"&gt;Inline Element&lt;/span&gt;
+        </pre>
+
+        <h3>8. Forms with Dropdowns & Checkboxes</h3>
+        <p>You can add checkboxes, radio buttons, and dropdowns for more complex forms.</p>
+        <pre>
+&lt;form&gt;
+  Choose fruit: 
+  &lt;select&gt;
+    &lt;option&gt;Apple&lt;/option&gt;
+    &lt;option&gt;Banana&lt;/option&gt;
+    &lt;option&gt;Cherry&lt;/option&gt;
+  &lt;/select&gt;&lt;br&gt;
+  
+  &lt;input type="checkbox"&gt; I agree to terms&lt;br&gt;
+  &lt;input type="radio" name="gender"&gt; Male
+  &lt;input type="radio" name="gender"&gt; Female
+&lt;/form&gt;
+        </pre>
+
+        <h3>9. iFrames</h3>
+        <p>iFrames allow embedding other web pages inside your page.</p>
+        <pre>
+&lt;iframe src="https://www.wikipedia.org" width="400" height="300"&gt;&lt;/iframe&gt;
+        </pre>
+
+        <h3>10. HTML5 APIs</h3>
+        <p>HTML5 introduced powerful APIs like Geolocation, Local Storage, and Canvas.</p>
+        <pre>
+&lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #000"&gt;&lt;/canvas&gt;
+        </pre>
+
+        <p>By the end of this course, you’ll be able to create a fully structured webpage and understand how HTML works in web development.</p>
+
+        <a href="home.html" class="back-btn">← Back to Home</a>
+        <a href="html-quiz.html" class="quiz-btn">Take Quiz →</a>
+    </section>
+
+    <footer>
+        © 2025 EduTech | Learn. Explore. Grow.
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C Programming Quiz</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#fdfbfb,#ebedee);
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  header {
+    text-align: center;
+    padding: 20px;
+    background: #0077b6;
+    color: #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  h1 { margin: 0; }
+
+  .quiz-container {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  }
+
+  .question { display: none; }
+  input[name="step"]:checked + .question {
+    display: block;
+    animation: fadeIn 0.6s ease;
+  }
+
+  @keyframes fadeIn {
+    from {opacity:0; transform:translateY(10px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+
+  h2 { color:#0077b6; }
+  label.option {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  label.option:hover { background:#e3f2fd; }
+  input[type="radio"] { display:none; }
+
+  .feedback {
+    display:none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  input.correct:checked ~ .feedback.correct,
+  input.wrong:checked ~ .feedback.wrong {
+    display:block;
+  }
+  .feedback.correct { background:#d4edda; color:green; }
+  .feedback.wrong { background:#f8d7da; color:red; }
+
+  .nav-btn, .submit-btn {
+    display:inline-block;
+    margin-top:15px;
+    margin-right:5px;
+    padding:8px 16px;
+    background:#007ACC;
+    color:#fff;
+    text-decoration:none;
+    border-radius:6px;
+    cursor: pointer;
+    border: none;
+  }
+  .nav-btn:hover, .submit-btn:hover { background:#333; color:white; }
+
+  #result {
+    display:none;
+    margin-top:20px;
+    padding:20px;
+    background:#e3f2fd;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>C Programming Basics Quiz</h1>
+  <p>Test your knowledge of fundamental C concepts</p>
+</header>
+
+<div class="quiz-container">
+
+
+  <input type="radio" name="step" id="s1" checked>
+  <div class="question">
+    <h2>Q1: Who is the creator of C language?</h2>
+    <input type="radio" id="q1a" name="q1" class="wrong"><label for="q1a" class="option">James Gosling</label>
+    <input type="radio" id="q1b" name="q1" class="correct"><label for="q1b" class="option">Dennis Ritchie</label>
+    <input type="radio" id="q1c" name="q1" class="wrong"><label for="q1c" class="option">Guido van Rossum</label>
+    <div class="feedback correct">✅ Correct! Dennis Ritchie created C.</div>
+    <div class="feedback wrong">❌ Wrong. Dennis Ritchie created C.</div>
+    <label for="s2" class="nav-btn">Next ➡</label>
+  </div>
+
+  
+  <input type="radio" name="step" id="s2">
+  <div class="question">
+    <h2>Q2: Which symbol is used to end a statement in C?</h2>
+    <input type="radio" id="q2a" name="q2" class="wrong"><label for="q2a" class="option">:</label>
+    <input type="radio" id="q2b" name="q2" class="correct"><label for="q2b" class="option">;</label>
+    <input type="radio" id="q2c" name="q2" class="wrong"><label for="q2c" class="option">.</label>
+    <div class="feedback correct">✅ Correct! C statements end with semicolon.</div>
+    <div class="feedback wrong">❌ Wrong. Use semicolon in C.</div>
+    <label for="s1" class="nav-btn">⬅ Back</label>
+    <label for="s3" class="nav-btn">Next ➡</label>
+  </div>
+
+  
+  <input type="radio" name="step" id="s3">
+  <div class="question">
+    <h2>Q3: What is the size of int in C (on most 32-bit systems)?</h2>
+    <input type="radio" id="q3a" name="q3" class="correct"><label for="q3a" class="option">4 bytes</label>
+    <input type="radio" id="q3b" name="q3" class="wrong"><label for="q3b" class="option">2 bytes</label>
+    <input type="radio" id="q3c" name="q3" class="wrong"><label for="q3c" class="option">8 bytes</label>
+    <div class="feedback correct">✅ Correct! int is usually 4 bytes.</div>
+    <div class="feedback wrong">❌ Wrong. int is 4 bytes.</div>
+    <label for="s2" class="nav-btn">⬅ Back</label>
+    <label for="s4" class="nav-btn">Next ➡</label>
+  </div>
+
+  
+  <input type="radio" name="step" id="s4">
+  <div class="question">
+    <h2>Q4: Which function is used to print output in C?</h2>
+    <input type="radio" id="q4a" name="q4" class="wrong"><label for="q4a" class="option">cin</label>
+    <input type="radio" id="q4b" name="q4" class="wrong"><label for="q4b" class="option">cout</label>
+    <input type="radio" id="q4c" name="q4" class="correct"><label for="q4c" class="option">printf()</label>
+    <div class="feedback correct">✅ Correct! Use printf().</div>
+    <div class="feedback wrong">❌ Wrong. The answer is printf().</div>
+    <label for="s3" class="nav-btn">⬅ Back</label>
+    <label for="s5" class="nav-btn">Next ➡</label>
+  </div>
+
+  
+  <input type="radio" name="step" id="s5">
+  <div class="question">
+    <h2>Q5: Which header file is needed for printf()?</h2>
+    <input type="radio" id="q5a" name="q5" class="wrong"><label for="q5a" class="option">math.h</label>
+    <input type="radio" id="q5b" name="q5" class="correct"><label for="q5b" class="option">stdio.h</label>
+    <input type="radio" id="q5c" name="q5" class="wrong"><label for="q5c" class="option">stdlib.h</label>
+    <div class="feedback correct">✅ Correct! stdio.h is needed.</div>
+    <div class="feedback wrong">❌ Wrong. Use stdio.h for printf().</div>
+    <label for="s4" class="nav-btn">⬅ Back</label>
+    <label for="s6" class="nav-btn">Next ➡</label>
+  </div>
+
+  
+  <input type="radio" name="step" id="s6">
+  <div class="question">
+    <h2>Q6: Which of these is a loop in C?</h2>
+    <input type="radio" id="q6a" name="q6" class="wrong"><label for="q6a" class="option">repeat-until</label>
+    <input type="radio" id="q6b" name="q6" class="correct"><label for="q6b" class="option">for</label>
+    <input type="radio" id="q6c" name="q6" class="wrong"><label for="q6c" class="option">foreach</label>
+    <div class="feedback correct">✅ Correct! for loop exists in C.</div>
+    <div class="feedback wrong">❌ Wrong. Correct is for loop.</div>
+    <label for="s5" class="nav-btn">⬅ Back</label>
+    <label for="s7" class="nav-btn">Next ➡</label>
+  </div>
+
+ 
+  <input type="radio" name="step" id="s7">
+  <div class="question">
+    <h2>Q7: Which operator is used for address in C?</h2>
+    <input type="radio" id="q7a" name="q7" class="correct"><label for="q7a" class="option">&</label>
+    <input type="radio" id="q7b" name="q7" class="wrong"><label for="q7b" class="option">*</label>
+    <input type="radio" id="q7c" name="q7" class="wrong"><label for="q7c" class="option">%</label>
+    <div class="feedback correct">✅ Correct! & gives address of variable.</div>
+    <div class="feedback wrong">❌ Wrong. Correct answer is &.</div>
+    <label for="s6" class="nav-btn">⬅ Back</label>
+    <label for="s8" class="nav-btn">Next ➡</label>
+  </div>
+
+  
+  <input type="radio" name="step" id="s8">
+  <div class="question">
+    <h2>Q8: What is the correct file extension for C programs?</h2>
+    <input type="radio" id="q8a" name="q8" class="wrong"><label for="q8a" class="option">.cpp</label>
+    <input type="radio" id="q8b" name="q8" class="correct"><label for="q8b" class="option">.c</label>
+    <input type="radio" id="q8c" name="q8" class="wrong"><label for="q8c" class="option">.java</label>
+    <div class="feedback correct">✅ Correct! C files use .c extension.</div>
+    <div class="feedback wrong">❌ Wrong. Correct is .c.</div>
+    <label for="s7" class="nav-btn">⬅ Back</label>
+    <button class="submit-btn" onclick="calculateScore()">Submit Quiz</button>
+  </div>
+
+  <div id="result"></div>
+
+</div>
+
+<script>
+function calculateScore() {
+  let score = 0;
+  const total = 8;
+  for (let i = 1; i <= total; i++) {
+    const correctOption = document.querySelector('input[name="q'+i+'"].correct:checked');
+    if (correctOption) score++;
+  }
+  document.getElementById("result").style.display = "block";
+  document.getElementById("result").innerText = "🖥️ You scored " + score + " out of " + total + "!";
+}
+</script>
+
+</body>
+</html>
