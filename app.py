@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, send_from_directory, abort
 
 app = Flask(__name__, template_folder="templates")
 
@@ -17,7 +17,10 @@ def render_page(page):
     if os.path.exists(template_path):
         return render_template(template_name)
     
-    # If file not found, return home or 404
+    # Fallback to root directory if exists
+    if os.path.exists(template_name):
+        return send_from_directory(".", template_name)
+        
     abort(404)
 
 @app.errorhandler(404)
