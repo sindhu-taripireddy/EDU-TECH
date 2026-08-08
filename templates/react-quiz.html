@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React.js Quiz</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#fdfbfb,#ebedee);
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  header {
+    text-align: center;
+    padding: 20px;
+    background: #0077b6;
+    color: #000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  h1 { margin: 0; }
+
+  .back-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #90e0ef;
+    color: #000;
+    padding: 10px 14px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  .back-btn:hover {
+    background: #00b4d8;
+    color: white;
+  }
+
+  .quiz-container {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  }
+
+  .question { display: none; }
+  input[name="step"]:checked + .question {
+    display: block;
+    animation: fadeIn 0.6s ease;
+  }
+
+  @keyframes fadeIn {
+    from {opacity:0; transform:translateY(10px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+
+  h2 { color:#0077b6; }
+  label.option {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  label.option:hover { background:#e3faff; }
+  input[type="radio"] { display:none; }
+
+  .feedback {
+    display:none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  input.correct:checked ~ .feedback.correct,
+  input.wrong:checked ~ .feedback.wrong {
+    display:block;
+  }
+  .feedback.correct { background:#d4edda; color:green; }
+  .feedback.wrong { background:#f8d7da; color:red; }
+
+  .nav-btn, .submit-btn {
+    display:inline-block;
+    margin-top:15px;
+    margin-right:5px;
+    padding:8px 16px;
+    background:#61dafb;
+    color:#000;
+    text-decoration:none;
+    border-radius:6px;
+    cursor: pointer;
+    border: none;
+  }
+  .nav-btn:hover, .submit-btn:hover { background:#333; color:white; }
+
+  #result {
+    display:none;
+    margin-top:20px;
+    padding:20px;
+    background:#e3faff;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="quizzes.html" class="back-btn">⬅</a>
+  <h1>React.js Basics Quiz</h1>
+  <p>Test your knowledge of React fundamentals</p>
+</header>
+
+<div class="quiz-container">
+
+  
+  <input type="radio" name="step" id="s1" checked>
+  <div class="question">
+    <h2>Q1: What is React primarily used for?</h2>
+    <input type="radio" id="q1a" name="q1" class="wrong"><label for="q1a" class="option">Database management</label>
+    <input type="radio" id="q1b" name="q1" class="correct"><label for="q1b" class="option">Building user interfaces</label>
+    <input type="radio" id="q1c" name="q1" class="wrong"><label for="q1c" class="option">Server-side rendering only</label>
+    <div class="feedback correct">✅ Correct! React is for building UIs.</div>
+    <div class="feedback wrong">❌ Wrong. React is used for UIs.</div>
+    <label for="s2" class="nav-btn">Next ➡</label>
+  </div>
+
+  
+  <input type="radio" name="step" id="s2">
+  <div class="question">
+    <h2>Q2: Who developed React?</h2>
+    <input type="radio" id="q2a" name="q2" class="correct"><label for="q2a" class="option">Facebook</label>
+    <input type="radio" id="q2b" name="q2" class="wrong"><label for="q2b" class="option">Google</label>
+    <input type="radio" id="q2c" name="q2" class="wrong"><label for="q2c" class="option">Microsoft</label>
+    <div class="feedback correct">✅ Correct! React was created at Facebook.</div>
+    <div class="feedback wrong">❌ Wrong. React was made by Facebook.</div>
+    <label for="s1" class="nav-btn">⬅ Back</label>
+    <label for="s3" class="nav-btn">Next ➡</label>
+  </div>
+
+  
+  <input type="radio" name="step" id="s3">
+  <div class="question">
+    <h2>Q3: What syntax extension does React use?</h2>
+    <input type="radio" id="q3a" name="q3" class="wrong"><label for="q3a" class="option">HTML++</label>
+    <input type="radio" id="q3b" name="q3" class="correct"><label for="q3b" class="option">JSX</label>
+    <input type="radio" id="q3c" name="q3" class="wrong"><label for="q3c" class="option">TypeScript only</label>
+    <div class="feedback correct">✅ Correct! React uses JSX.</div>
+    <div class="feedback wrong">❌ Wrong. The answer is JSX.</div>
+    <label for="s2" class="nav-btn">⬅ Back</label>
+    <label for="s4" class="nav-btn">Next ➡</label>
+  </div>
+
+ 
+  <input type="radio" name="step" id="s4">
+  <div class="question">
+    <h2>Q4: Components in React should start with?</h2>
+    <input type="radio" id="q4a" name="q4" class="wrong"><label for="q4a" class="option">lowercase letter</label>
+    <input type="radio" id="q4b" name="q4" class="correct"><label for="q4b" class="option">Uppercase letter</label>
+    <input type="radio" id="q4c" name="q4" class="wrong"><label for="q4c" class="option">Any case</label>
+    <div class="feedback correct">✅ Correct! React components start with uppercase.</div>
+    <div class="feedback wrong">❌ Wrong. They must start with uppercase.</div>
+    <label for="s3" class="nav-btn">⬅ Back</label>
+    <label for="s5" class="nav-btn">Next ➡</label>
+  </div>
+
+
+  <input type="radio" name="step" id="s5">
+  <div class="question">
+    <h2>Q5: What hook is commonly used for state in React?</h2>
+    <input type="radio" id="q5a" name="q5" class="correct"><label for="q5a" class="option">useState</label>
+    <input type="radio" id="q5b" name="q5" class="wrong"><label for="q5b" class="option">useData</label>
+    <input type="radio" id="q5c" name="q5" class="wrong"><label for="q5c" class="option">useStore</label>
+    <div class="feedback correct">✅ Correct! useState manages state.</div>
+    <div class="feedback wrong">❌ Wrong. Correct is useState.</div>
+    <label for="s4" class="nav-btn">⬅ Back</label>
+    <label for="s6" class="nav-btn">Next ➡</label>
+  </div>
+
+  
+  <input type="radio" name="step" id="s6">
+  <div class="question">
+    <h2>Q6: How do you create a React app quickly?</h2>
+    <input type="radio" id="q6a" name="q6" class="wrong"><label for="q6a" class="option">npm start myApp</label>
+    <input type="radio" id="q6b" name="q6" class="correct"><label for="q6b" class="option">npx create-react-app myApp</label>
+    <input type="radio" id="q6c" name="q6" class="wrong"><label for="q6c" class="option">node new react myApp</label>
+    <div class="feedback correct">✅ Correct! Use create-react-app.</div>
+    <div class="feedback wrong">❌ Wrong. Correct is npx create-react-app.</div>
+    <label for="s5" class="nav-btn">⬅ Back</label>
+    <label for="s7" class="nav-btn">Next ➡</label>
+  </div>
+
+ 
+  <input type="radio" name="step" id="s7">
+  <div class="question">
+    <h2>Q7: Which hook is used for side effects?</h2>
+    <input type="radio" id="q7a" name="q7" class="wrong"><label for="q7a" class="option">useLogic</label>
+    <input type="radio" id="q7b" name="q7" class="wrong"><label for="q7b" class="option">useState</label>
+    <input type="radio" id="q7c" name="q7" class="correct"><label for="q7c" class="option">useEffect</label>
+    <div class="feedback correct">✅ Correct! useEffect handles side effects.</div>
+    <div class="feedback wrong">❌ Wrong. Correct is useEffect.</div>
+    <label for="s6" class="nav-btn">⬅ Back</label>
+    <label for="s8" class="nav-btn">Next ➡</label>
+  </div>
+
+  
+  <input type="radio" name="step" id="s8">
+  <div class="question">
+    <h2>Q8: What command starts a React development server?</h2>
+    <input type="radio" id="q8a" name="q8" class="correct"><label for="q8a" class="option">npm start</label>
+    <input type="radio" id="q8b" name="q8" class="wrong"><label for="q8b" class="option">npm run build</label>
+    <input type="radio" id="q8c" name="q8" class="wrong"><label for="q8c" class="option">npm serve</label>
+    <div class="feedback correct">✅ Correct! npm start runs dev server.</div>
+    <div class="feedback wrong">❌ Wrong. The answer is npm start.</div>
+    <label for="s7" class="nav-btn">⬅ Back</label>
+    <button class="submit-btn" onclick="calculateScore()">Submit Quiz</button>
+  </div>
+
+  <div id="result"></div>
+
+</div>
+
+<script>
+function calculateScore() {
+  let score = 0;
+  const total = 8;
+  for (let i = 1; i <= total; i++) {
+    const correctOption = document.querySelector('input[name="q'+i+'"].correct:checked');
+    if (correctOption) score++;
+  }
+  document.getElementById("result").style.display = "block";
+  document.getElementById("result").innerText = "⚛️ You scored " + score + " out of " + total + "!";
+}
+</script>
+
+</body>
+</html>
+
+
