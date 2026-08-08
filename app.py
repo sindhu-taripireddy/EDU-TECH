@@ -1,7 +1,10 @@
 import os
 from flask import Flask, render_template, send_from_directory, abort
 
-app = Flask(__name__, template_folder="templates")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+
+app = Flask(__name__, template_folder=TEMPLATE_DIR, static_folder=BASE_DIR)
 
 @app.route("/")
 def index():
@@ -18,8 +21,8 @@ def render_page(page):
         return render_template(template_name)
     
     # Fallback to root directory if exists
-    if os.path.exists(template_name):
-        return send_from_directory(".", template_name)
+    if os.path.exists(os.path.join(BASE_DIR, template_name)):
+        return send_from_directory(BASE_DIR, template_name)
         
     abort(404)
 
